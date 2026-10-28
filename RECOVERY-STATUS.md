@@ -6,7 +6,7 @@ Most JSX, data, HTML, and README content was recovered from captures made before
 
 Known differences:
 
-- `src/styles.css` comes from the current Safar safety snapshot because a complete pre-edit stylesheet was not present in the session records. The visual styling therefore does not exactly match the old baseline.
+- `src/styles.css` was reconstructed by removing later Safar-specific layout additions and reversing the documented palette conversion. Several old accent colors were mapped to shared new colors, so those individual shades cannot be reversed exactly.
 - `package-lock.json` is based on the current lockfile with the original project name restored; the original lockfile itself was not captured.
 - The project build was verified, but a pixel-identical comparison with commit `211c117` is impossible.
 
