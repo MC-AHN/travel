@@ -1,0 +1,14 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones, MapPin, Menu, Plane, ShieldCheck, Star, Users, X, CalendarDays, BookOpen, Building2, CircleHelp, Globe2, HeartHandshake, Hotel, Luggage, MessageCircle, PlaneTakeoff, Wallet, MapPinned, BadgeCheck, ChevronRight, FileText, Landmark, CircleCheck, Info, Plus, Minus } from 'lucide-react';
+import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
+
+export default function PackageGuide() {
+  const [active, setActive] = useState('budget');
+  const guides = {
+    budget: { title:'Mulai dari anggaran', text:'Tentukan kisaran anggaran, lalu bandingkan apa saja yang sudah termasuk di dalam harga. Jangan hanya membandingkan angka akhir.', points:['Harga berdasarkan tipe kamar','Biaya yang termasuk dan tidak termasuk','Jadwal pembayaran dan ketentuan pembatalan'], icon:<Wallet/> },
+    comfort: { title:'Utamakan kenyamanan', text:'Perhatikan lokasi hotel, akses transportasi, durasi perjalanan, dan kebutuhan pendampingan selama di Tanah Suci.', points:['Nama dan lokasi hotel','Durasi serta ritme kegiatan','Pendampingan dan fasilitas jamaah'], icon:<Hotel/> },
+    schedule: { title:'Sesuaikan dengan waktu', text:'Pilih tanggal yang memungkinkan Anda menyiapkan dokumen, cuti, dan kebutuhan keluarga dengan cukup waktu.', points:['Tanggal berangkat dan pulang','Lama perjalanan','Waktu untuk persiapan administrasi'], icon:<CalendarDays/> }
+  };
+  const item = guides[active];
+  return <section className="section guide-section" id="panduan"><div className="container guide-layout"><div className="guide-visual"><img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1300&q=85" alt="Suasana Masjid Nabawi" loading="lazy"/><div className="guide-note"><span className="guide-note-icon"><BookOpen size={20}/></span><span><strong>Panduan memilih paket</strong><small>3 hal yang layak dibandingkan</small></span></div><div className="guide-vertical">PERSIAPAN YANG LEBIH TERARAH</div></div><div className="guide-content"><div className="eyebrow"><span/> BANTUAN MEMILIH</div><h2>Paket yang tepat bukan hanya soal harga.</h2><p className="guide-lead">Gunakan panduan singkat ini untuk menentukan prioritas sebelum berkonsultasi dengan tim perjalanan.</p><div className="guide-tabs">{[['budget','Anggaran'],['comfort','Kenyamanan'],['schedule','Jadwal']].map(([id,label])=><button key={id} onClick={()=>setActive(id)} className={active===id?'guide-tab active':'guide-tab'}>{label}</button>)}</div><div className="guide-detail" key={active}><div className="guide-detail-icon">{item.icon}</div><h3>{item.title}</h3><p>{item.text}</p><ul>{item.points.map(p=><li key={p}><Check size={16}/>{p}</li>)}</ul></div><a className="button button-primary" href="#konsultasi">Diskusikan kebutuhan <ArrowRight size={16}/></a></div></div></section>;
+}

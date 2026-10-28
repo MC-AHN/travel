@@ -1,0 +1,13 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones, MapPin, Menu, Plane, ShieldCheck, Star, Users, X, CalendarDays, BookOpen, Building2, CircleHelp, Globe2, HeartHandshake, Hotel, Luggage, MessageCircle, PlaneTakeoff, Wallet, MapPinned, BadgeCheck, ChevronRight, FileText, Landmark, CircleCheck, Info, Plus, Minus } from 'lucide-react';
+import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
+
+export default function VisualItinerary() {
+  const days = [
+    {day:'01', title:'Keberangkatan', place:'Bandara & perjalanan menuju Arab Saudi', desc:'Pemeriksaan dokumen, koordinasi rombongan, dan perjalanan menuju kota tujuan.', image:'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=80'},
+    {day:'02–03', title:'Madinah', place:'Masjid Nabawi dan kawasan sekitar', desc:'Waktu ibadah, pengenalan lokasi, dan agenda ziarah sesuai program.', image:'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=700&q=80'},
+    {day:'04–07', title:'Makkah', place:'Masjidil Haram dan agenda umrah', desc:'Pelaksanaan ibadah umrah serta waktu istirahat dan kegiatan sesuai jadwal.', image:'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=700&q=80'},
+    {day:'08–09', title:'Kepulangan', place:'Persiapan kembali ke Indonesia', desc:'Pengecekan barang, koordinasi keberangkatan, dan perjalanan pulang.', image:'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=80'}
+  ];
+  return <section className="section itinerary-section" id="itinerary"><div className="container"><div className="section-heading center"><div className="eyebrow"><span/> GAMBARAN PERJALANAN</div><h2>Dari hari pertama hingga<br/><em>kembali ke rumah.</em></h2><p>Urutan berikut memberi gambaran perjalanan umrah selama 9 hari. Agenda dan durasi dapat berbeda sesuai paket yang dipilih.</p></div><div className="itinerary-track">{days.map((d,i)=><article className={`itinerary-stop ${i%2?'reverse':''}`} key={d.day}><div className="itinerary-photo"><img src={d.image} alt={d.title} loading="lazy"/><span>HARI {d.day}</span></div><div className="itinerary-marker"><span>{String(i+1).padStart(2,'0')}</span></div><div className="itinerary-copy"><span className="itinerary-place"><MapPin size={14}/>{d.place}</span><h3>{d.title}</h3><p>{d.desc}</p></div></article>)}</div><div className="itinerary-foot"><Info size={17}/><span>Urutan kota, agenda, dan durasi perjalanan mengikuti itinerary pada paket yang Anda pilih.</span></div></div></section>;
+}

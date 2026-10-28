@@ -1,0 +1,85 @@
+// Package information used by the package catalog and detail panel.
+export const packages = [
+  {
+    id: 1,
+    category: 'Umrah',
+    tag: 'Pilihan jamaah',
+    title: 'Paket Upgrade 10 Maret GA 9H Jed Jed Silver',
+    date: '10 Maret 2027',
+    duration: '9 hari',
+    makkah: 'Prestige Ajyad Hotel',
+    madinah: 'Al-Mukhtara Al-Gharbi',
+    airline: 'Garuda Indonesia',
+    airport: 'Soekarno-Hatta (CGK)',
+    seats: 83,
+    price: 'Rp30.990.000',
+    image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1000&q=85',
+    roomPrices: [{ type: 'Double', note: '2 orang per kamar', price: 'Konfirmasi harga' }, { type: 'Triple', note: '3 orang per kamar', price: 'Konfirmasi harga' }, { type: 'Quad', note: '4 orang per kamar', price: 'Konfirmasi harga' }],
+    included: ['Tiket pesawat Garuda Indonesia sesuai program', 'Hotel Makkah dan Madinah sesuai paket', 'Visa dan transportasi sesuai ketentuan paket', 'Pendampingan tour leader / muthawif sesuai program'],
+    excluded: ['Paspor dan vaksinasi jika belum termasuk paket', 'Pengeluaran pribadi dan layanan di luar program', 'Biaya lain yang tidak tercantum dalam konfirmasi tertulis'],
+    itinerary: ['Keberangkatan dan perjalanan menuju Madinah', 'Ibadah dan kegiatan di Madinah', 'Perjalanan menuju Makkah dan pelaksanaan umrah', 'Kegiatan ibadah / ziarah sesuai program', 'Persiapan kepulangan dan perjalanan kembali']
+  },
+  {
+    id: 2,
+    category: 'Umrah',
+    tag: 'Gold upgrade',
+    title: 'Paket Umroh 14 Juni 2027 9H Gold Upgrade',
+    date: '14 Juni 2027',
+    duration: '9 hari',
+    makkah: 'Sofwa',
+    madinah: 'Al Kayan Internasional',
+    airline: 'Saudi Arabian Airlines',
+    airport: 'Soekarno-Hatta (CGK)',
+    seats: 40,
+    price: 'Rp33.490.000',
+    image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1000&q=85',
+    roomPrices: [{ type: 'Double', note: '2 orang per kamar', price: 'Konfirmasi harga' }, { type: 'Triple', note: '3 orang per kamar', price: 'Konfirmasi harga' }, { type: 'Quad', note: '4 orang per kamar', price: 'Konfirmasi harga' }],
+    included: ['Tiket pesawat sesuai maskapai yang tercantum', 'Akomodasi hotel sesuai paket', 'Visa dan transportasi sesuai ketentuan paket', 'Pendampingan sesuai program perjalanan'],
+    excluded: ['Pembuatan paspor dan vaksinasi jika belum termasuk', 'Pengeluaran pribadi dan aktivitas opsional', 'Biaya yang tidak dicantumkan dalam konfirmasi paket'],
+    itinerary: ['Keberangkatan menuju Arab Saudi', 'Kegiatan ibadah di Madinah', 'Perjalanan menuju Makkah', 'Pelaksanaan umrah dan kegiatan sesuai program', 'Kepulangan ke Indonesia']
+  },
+  {
+    id: 3,
+    category: 'Umrah',
+    tag: 'Gold',
+    title: 'Paket Umroh 14 Juni 2027 9H Gold',
+    date: '14 Juni 2027',
+    duration: '9 hari',
+    makkah: 'Ramada Ajyad',
+    madinah: 'Al Kayan Internasional',
+    airline: 'Saudi Arabian Airlines',
+    airport: 'Soekarno-Hatta (CGK)',
+    seats: 40,
+    price: 'Rp27.990.000',
+    image: 'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1000&q=85',
+    roomPrices: [{ type: 'Double', note: '2 orang per kamar', price: 'Konfirmasi harga' }, { type: 'Triple', note: '3 orang per kamar', price: 'Konfirmasi harga' }, { type: 'Quad', note: '4 orang per kamar', price: 'Konfirmasi harga' }],
+    included: ['Tiket pesawat sesuai maskapai yang tercantum', 'Hotel Makkah dan Madinah sesuai paket', 'Visa dan transportasi sesuai ketentuan paket', 'Pendampingan sesuai program perjalanan'],
+    excluded: ['Paspor dan vaksinasi jika belum termasuk', 'Pengeluaran pribadi dan layanan tambahan', 'Biaya lain di luar rincian paket'],
+    itinerary: ['Keberangkatan menuju Arab Saudi', 'Kegiatan ibadah di Madinah', 'Perjalanan menuju Makkah', 'Pelaksanaan umrah dan kegiatan sesuai program', 'Persiapan kepulangan ke Indonesia']
+  },
+  {
+    id: 4,
+    category: 'Wisata',
+    tag: 'International trip',
+    title: 'Wonderful Turki 4D3N',
+    date: 'Berdasarkan permintaan',
+    duration: '4 hari',
+    makkah: 'Istanbul & sekitarnya',
+    madinah: 'Turki',
+    airline: 'Konfirmasi saat pemesanan',
+    airport: 'Sesuai itinerary',
+    seats: 999,
+    price: 'Rp10.900.000',
+    image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1000&q=85',
+    roomPrices: [{ type: 'Per orang', note: 'Konfigurasi mengikuti paket', price: 'Konfirmasi harga' }],
+    included: ['Akomodasi dan transportasi sesuai itinerary final', 'Layanan yang secara tertulis tercantum dalam program'],
+    excluded: ['Pengeluaran pribadi dan aktivitas opsional', 'Layanan yang tidak tercantum dalam itinerary final'],
+    itinerary: ['Rangkaian perjalanan mengikuti itinerary final dari tim travel']
+  }
+];
+
+export const testimonials = [
+  { quote: 'Dari proses pendaftaran sampai keberangkatan sangat dimudahkan. Tour leader dan muthawif membantu perjalanan terasa nyaman.', name: 'Betty A.', meta: 'Jamaah umrah' },
+  { quote: 'Pelayanan ramah, informasi mudah dipahami, dan pendampingan selama perjalanan sangat membantu.', name: 'Hanik R.', meta: 'Jamaah umrah' },
+  { quote: 'Perjalanan berkesan dengan pendamping yang sabar dan perhatian terhadap kebutuhan jamaah.', name: 'Lathifah S.', meta: 'Jamaah umrah' }
+];
