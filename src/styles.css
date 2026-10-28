@@ -511,3 +511,31 @@ body{font-size:16px;line-height:1.65}
   .packages-section::before { transform: none !important; will-change: auto; }
   .package-carousel { scroll-snap-type: none; }
 }
+
+.article-image,
+.article-title-button,
+.article-more {
+  font: inherit;
+  cursor: pointer;
+}
+.article-image {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+.article-title-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+}
+.article-more {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
