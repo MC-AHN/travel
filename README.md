@@ -52,7 +52,11 @@ npm run preview
 - Replace remote Unsplash images with approved company-owned/licensed assets.
 - Add separate routes and backend integrations if needed. This prototype is primarily a homepage design, not a booking/payment system.
 
-The prototype uses external image URLs and Google Fonts, so those assets require an internet connection. Dependency installation/build was not verified in this environment because package installation timed out.
+The prototype uses external image URLs and Google Fonts, so those assets require an internet connection.
+
+## Deploy to GitHub Pages
+
+The `main` branch is deployed automatically with GitHub Actions. The Vite base path is configured for the repository URL `/travel/`; keep it in sync if the repository name or Pages URL changes. The workflow builds the site into `dist/` and publishes that directory.
 
 ## Revisi V4 — fondasi tipografi dan cerita jamaah
 - Menambah skala tipografi yang lebih mudah dibaca pada navigasi, paragraf, kartu informasi, detail paket, FAQ, artikel, dan tombol.
