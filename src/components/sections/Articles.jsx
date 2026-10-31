@@ -110,7 +110,7 @@ function ArticleDetail({ article, onClose }) {
   return <div className="article-detail-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <article className="article-detail-modal" ref={modalRef} role="dialog" aria-modal="true" aria-labelledby="article-detail-title" tabIndex={-1}>
       <button ref={closeRef} type="button" className="article-detail-close" onClick={onClose} aria-label="Tutup artikel">×</button>
-      <img className="article-detail-image" src={article.image} alt="" />
+      <div className="article-detail-media"><img className="article-detail-image" src={article.image} alt="" /></div>
       <div className="article-detail-content">
         <div className="eyebrow"><span />{article.tag}</div>
         <h2 id="article-detail-title">{article.title}</h2>

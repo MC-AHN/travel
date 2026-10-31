@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headphones } from 'lucide-react';
+import { Headset } from 'lucide-react';
 import { WA_NUMBER } from './components/ui/common.jsx';
 import Navbar from './components/layout/Navbar.jsx';
 import Footer from './components/layout/Footer.jsx';
@@ -19,8 +19,7 @@ import Testimonials from './components/sections/Testimonials.jsx';
 import Articles from './components/sections/Articles.jsx';
 import FAQ from './components/sections/FAQ.jsx';
 import ContactBanner from './components/sections/ContactBanner.jsx';
-import Promo from './components/sections/Promo.jsx';
 
 export default function App() {
-  return <><Navbar/><main><Hero/><TrustStrip/><Services/><Packages/><DestinationMosaic/><About/><Benefits/><PackageGuide/><InformationTiles/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/><Promo/></main><Footer/><a className="floating-wa" href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noreferrer" aria-label="Chat WhatsApp"><Headphones size={21}/><span>Butuh bantuan?</span></a></>;
+  return <><Navbar/><main><Hero/><TrustStrip/><Services/><Packages/><DestinationMosaic/><About/><Benefits/><PackageGuide/><InformationTiles/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/></main><Footer/><a className="floating-wa" href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noreferrer" aria-label="Chat WhatsApp"><Headset size={21}/><span>Butuh bantuan?</span></a></>;
 }
