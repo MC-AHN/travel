@@ -17,7 +17,7 @@ export default function Header() {
     {links.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)}>{label}</a>)}
     <a className="nav-cta" href="#konsultasi" onClick={() => setOpen(false)}>Konsultasi Gratis <ArrowRight size={16} /></a>
   </nav>;
-  const brand = <a className="brand" href="#beranda" aria-label="Alfajr beranda"><span className="brand-mark">A</span><span className="brand-text"><strong>ALFAJR</strong><small>UMROH & HAJI</small></span></a>;
+  const brand = <a className="brand" href="#beranda" aria-label="Safar Wisata Madina beranda"><img className="navbar-logo" src="/assets/brand/safar-wisata-madina-logo.png" alt="Safar Wisata Madina" /></a>;
   return <>
     <header className="site-header hero-header" inert={showSticky}>
       {brand}

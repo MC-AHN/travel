@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export const WA_NUMBER = '6282328749564'; // Ganti jika nomor layanan yang digunakan berbeda.
+export const WA_NUMBER = '6282185522210';
 
 export function WhatsAppLink({ children = 'Konsultasi via WhatsApp', className = 'button button-primary', showArrow = true }) {
-  const message = encodeURIComponent('Assalamu’alaikum, saya ingin bertanya tentang paket perjalanan Alfajr.');
+  const message = encodeURIComponent('Assalamu’alaikum, saya ingin bertanya tentang paket perjalanan Safar Wisata Madina.');
   return <a className={className} href={`https://wa.me/${WA_NUMBER}?text=${message}`} target="_blank" rel="noreferrer">{children}{showArrow && <ArrowRight size={17} />}</a>;
 }
 

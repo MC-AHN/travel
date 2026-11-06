@@ -1,8 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones, MapPin, Menu, Plane, ShieldCheck, Star, Users, X, CalendarDays, BookOpen, Building2, CircleHelp, Globe2, HeartHandshake, Hotel, Luggage, MessageCircle, PlaneTakeoff, Wallet, MapPinned, BadgeCheck, ChevronRight, FileText, Landmark, CircleCheck, Info, Plus, Minus } from 'lucide-react';
-import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import { SectionHeading } from '../ui/common.jsx';
 
 export default function Benefits() {
-  const benefits = [ ['01', 'Harga transparan', 'Diskusikan detail biaya dan fasilitas sebelum memilih paket.'], ['02', 'Bantuan persiapan', 'Dapatkan informasi dokumen dan kebutuhan perjalanan.'], ['03', 'Pendampingan jamaah', 'Tim perjalanan membantu mengarahkan agenda selama perjalanan.'] ];
-  return <section className="benefits-section"><div className="container benefits-layout"><SectionHeading eyebrow="MENGAPA ALFAJR" title={<>Perjalanan yang direncanakan<br /><em>dengan lebih baik.</em></>} text="Kami percaya pengalaman perjalanan dimulai dari komunikasi yang baik sejak awal."/><div className="benefit-list">{benefits.map(([num, title, desc]) => <div className="benefit-row" key={num}><span className="benefit-number">{num}</span><div><h3>{title}</h3><p>{desc}</p></div><ArrowRight className="benefit-arrow" size={19} /></div>)}</div></div></section>;
+  const benefits = [
+    ['01', 'Amanah', 'Informasi layanan dan biaya disampaikan dengan jelas untuk membantu jamaah mengambil keputusan.'],
+    ['02', 'Pendampingan', 'Jamaah didampingi sejak persiapan, keberangkatan, hingga perjalanan ibadah selesai.'],
+    ['03', 'Pembimbing berpengalaman', 'Bimbingan ibadah diberikan oleh pembimbing yang berpengalaman mendampingi jamaah.'],
+    ['04', 'Kemudahan', 'Informasi dan bantuan perjalanan disiapkan agar proses umrah terasa lebih mudah.']
+  ];
+  return <section className="benefits-section"><div className="container benefits-layout"><SectionHeading eyebrow="KEUNGGULAN SAFAR WISATA MADINA" title={<>Menemani perjalanan ibadah<br /><em>dengan sepenuh hati.</em></>} text="Amanah, pendampingan, pembimbing, dan kemudahan menjadi bagian dari layanan kami untuk jamaah."/><div className="benefit-list">{benefits.map(([num, title, desc]) => <div className="benefit-row" key={num}><span className="benefit-number">{num}</span><div><h3>{title}</h3><p>{desc}</p></div><ArrowRight className="benefit-arrow" size={19} /></div>)}</div></div></section>;
 }

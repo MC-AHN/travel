@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 
 const articles = [
   {
@@ -122,7 +122,7 @@ function ArticleDetail({ article, onClose }) {
           {section.points && <ul>{section.points.map(point => <li key={point}>{point}</li>)}</ul>}
         </section>)}
         <p className="article-detail-note">Informasi program dapat berubah. Konfirmasikan rincian terbaru kepada penyelenggara perjalanan sebelum mendaftar.</p>
-        <a className="button button-primary" href="#konsultasi" onClick={onClose}>Tanyakan kepada tim Alfajr <ArrowRight size={16} /></a>
+        <a className="button button-primary" href="#konsultasi" onClick={onClose}>Tanyakan kepada tim Safar Wisata Madina <ArrowRight size={16} /></a>
       </div>
     </article>
   </div>;
@@ -130,7 +130,14 @@ function ArticleDetail({ article, onClose }) {
 
 export default function Editorial() {
   const [selectedArticle, setSelectedArticle] = useState(null);
+  const [articlePage, setArticlePage] = useState(0);
   const closeArticle = () => setSelectedArticle(null);
+  const articlesPerPage = 2;
+  const pageCount = Math.ceil(articles.length / articlesPerPage);
+  const visibleArticles = articles.slice(
+    articlePage * articlesPerPage,
+    (articlePage + 1) * articlesPerPage
+  );
 
   return <section className="section editorial-section" id="artikel"><div className="container">
     <div className="editorial-head">
@@ -141,18 +148,29 @@ export default function Editorial() {
       </div>
       <a className="text-link" href="#konsultasi">Minta panduan dari tim <ArrowRight size={16}/></a>
     </div>
-    <div className="editorial-grid">{articles.map((article, index) => <article className="article-card" key={article.title}>
+    <div className={`editorial-grid${visibleArticles.length === 1 ? ' single-article' : ''}`} aria-live="polite">{visibleArticles.map((article, index) => {
+      const articleNumber = articlePage * articlesPerPage + index + 1;
+      return <article className="article-card" key={article.title}>
       <button type="button" className="article-image" onClick={() => setSelectedArticle(article)} aria-label={`Baca artikel: ${article.title}`}>
-        <img src={article.image} alt="" loading="lazy"/><span>{article.tag}</span><b>0{index + 1}</b>
+        <img src={article.image} alt="" loading="lazy"/><span>{article.tag}</span><b>0{articleNumber}</b>
       </button>
       <div className="article-copy">
-        <div className="article-meta"><span><BookOpen size={13}/>{article.time}</span><span>Alfajr Journal</span></div>
+        <div className="article-meta"><span><BookOpen size={13}/>{article.time}</span><span>Jurnal Safar</span></div>
         <h3><button type="button" className="article-title-button" onClick={() => setSelectedArticle(article)}>{article.title}</button></h3>
         <p>{article.desc}</p>
         <button type="button" className="article-more" onClick={() => setSelectedArticle(article)}>Baca artikel <ArrowRight size={15}/></button>
       </div>
-    </article>)}</div>
+    </article>;
+    })}</div>
+    <nav className="article-pagination" aria-label="Navigasi artikel">
+      <button type="button" onClick={() => setArticlePage(0)} disabled={articlePage === 0} aria-label="Kembali ke artikel sebelumnya">
+        <ArrowLeft size={16}/> Sebelumnya
+      </button>
+      <span aria-live="polite">Halaman {articlePage + 1} dari {pageCount}</span>
+      <button type="button" onClick={() => setArticlePage(pageCount - 1)} disabled={articlePage === pageCount - 1} aria-label="Lanjut ke artikel berikutnya">
+        Berikutnya <ArrowRight size={16}/>
+      </button>
+    </nav>
     {selectedArticle && <ArticleDetail article={selectedArticle} onClose={closeArticle} />}
   </div></section>;
 }
-

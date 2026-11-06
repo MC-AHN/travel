@@ -4,5 +4,5 @@ import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
 import { WA_NUMBER } from '../ui/common.jsx';
 
 export default function Promo() {
-  return <section className="promo-section"><div className="container promo-card"><div className="promo-image"/><div className="promo-content"><div className="eyebrow light"><span /> MULAI RENCANAKAN PERJALANAN</div><h2>Niat baik Anda,<br /><em>langkah pertama dimulai hari ini.</em></h2><p>Konsultasikan jadwal, fasilitas, dan pilihan paket bersama tim Alfajr.</p><WhatsAppLink className="button button-gold">Tanya pilihan paket</WhatsAppLink></div></div></section>;
+  return <section className="promo-section"><div className="container promo-card"><div className="promo-image"/><div className="promo-content"><div className="eyebrow light"><span /> MULAI RENCANAKAN PERJALANAN</div><h2>Niat baik Anda,<br /><em>langkah pertama dimulai hari ini.</em></h2><p>Konsultasikan jadwal, fasilitas, dan pilihan paket bersama tim Safar Wisata Madina.</p><WhatsAppLink className="button button-gold">Tanya pilihan paket</WhatsAppLink></div></div></section>;
 }

@@ -1,8 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones, MapPin, Menu, Plane, ShieldCheck, Star, Users, X, CalendarDays, BookOpen, Building2, CircleHelp, Globe2, HeartHandshake, Hotel, Luggage, MessageCircle, PlaneTakeoff, Wallet, MapPinned, BadgeCheck, ChevronRight, FileText, Landmark, CircleCheck, Info, Plus, Minus } from 'lucide-react';
-import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
+import React from 'react';
+import { BookOpen, ChevronRight } from 'lucide-react';
 
 export default function Preparation() {
-  const steps = [ ['01','Konsultasi','Sampaikan rencana, kebutuhan, dan kisaran anggaran.'], ['02','Pilih paket','Bandingkan jadwal, hotel, maskapai, dan fasilitas.'], ['03','Siapkan dokumen','Ikuti daftar dokumen dan arahan dari tim.'], ['04','Manasik & briefing','Pelajari alur perjalanan dan hal penting sebelum berangkat.'], ['05','Berangkat','Ikuti arahan koordinator dan jadwal perjalanan.'] ];
-  return <section className="section preparation-section" id="persiapan"><div className="container prep-layout"><div className="prep-copy"><div className="eyebrow"><span/> LANGKAH DEMI LANGKAH</div><h2>Persiapan terasa ringan<br/><em>saat tahu urutannya.</em></h2><p>Mulailah dengan menentukan kebutuhan dan anggaran, lalu bandingkan paket. Setelah memilih, ikuti arahan tim untuk dokumen, manasik, dan persiapan keberangkatan.</p><div className="prep-image"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1100&q=85" alt="Perjalanan dengan pesawat" loading="lazy"/><span><BookOpen size={17}/> Checklist sebelum berangkat</span></div></div><div className="prep-steps">{steps.map(([n,t,d])=><div className="prep-step" key={n}><div className="prep-step-num">{n}</div><div><h3>{t}</h3><p>{d}</p></div><ChevronRight size={18}/></div>)}</div></div></section>;
+  const steps = [
+    ['01', 'Konsultasi', 'Sampaikan rencana perjalanan, kebutuhan, dan anggaran agar tim dapat membantu menemukan program yang sesuai.'],
+    ['02', 'Pilih Paket Umrah', 'Tentukan paket berdasarkan jadwal keberangkatan, fasilitas, hotel, maskapai, dan tipe kamar.'],
+    ['03', 'Lengkapi Persyaratan', 'Siapkan dokumen perjalanan sesuai persyaratan dan ikuti arahan tim untuk proses administrasi.'],
+    ['04', 'Manasik dan Persiapan', 'Ikuti bimbingan manasik serta pengarahan mengenai tata cara ibadah dan teknis perjalanan sebelum keberangkatan.'],
+    ['05', 'Keberangkatan', 'Ikuti arahan tim pendamping dan koordinator selama proses keberangkatan menuju Tanah Suci.']
+  ];
+  return <section className="section preparation-section" id="persiapan"><div className="container prep-layout"><div className="prep-copy"><div className="eyebrow"><span/> LANGKAH PENDAFTARAN</div><h2>Setiap perjalanan dimulai dengan <em>persiapan yang terarah.</em></h2><p>Dari konsultasi awal hingga waktu keberangkatan, tim Safar Wisata Madina siap membantu jamaah memahami setiap tahapan perjalanan.</p><div className="prep-image"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1100&q=85" alt="Perjalanan dengan pesawat" loading="lazy"/><span><BookOpen size={17}/> Tahapan menuju keberangkatan</span></div></div><div className="prep-steps">{steps.map(([n,t,d])=><div className="prep-step" key={n}><div className="prep-step-num">{n}</div><div><h3>{t}</h3><p>{d}</p></div><ChevronRight size={18}/></div>)}</div></div></section>;
 }

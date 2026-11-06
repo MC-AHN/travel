@@ -24,7 +24,7 @@ npm run preview
 
 - `src/App.jsx` — homepage sections and interactions: mobile navigation, package filtering/detail modal, interactive package-selection guide, itinerary, FAQ, and WhatsApp CTAs.
 - `src/styles.css` — responsive design, layouts, image-led sections, cards, timelines, and mobile styles.
-- `src/data.js` — sample package and testimonial data.
+- `src/data.js` — package details transcribed from the promotional artwork in `public/assets/packages/`, plus testimonial content.
 - `index.html` — document metadata and fonts.
 
 ## Included homepage sections
@@ -33,8 +33,8 @@ npm run preview
 2. Trust strip
 3. Service categories
 4. Filterable package catalogue with detail modal
-5. Destination photo collage
-6. Company profile and service benefits
+5. Safar Wisata Madina journey editorial with original jamaah documentation
+6. Safar Wisata Madina company profile
 7. Interactive guide for choosing a package
 8. Quick visual tiles for flight, hotel, transport, documents, and costs
 9. Visual itinerary timeline
@@ -47,9 +47,11 @@ npm run preview
 
 ## Before publishing
 
-- Replace all dummy package information, prices, dates, hotel/airline details, itinerary, seat counts, and sample testimonials with verified and approved data.
+- Confirm package dates, prices, hotels, inclusions, and exclusions against current company-approved materials before publishing.
+- Replace sample testimonials with verified and approved jamaah feedback.
+- Confirm the editorial vision wording and verify the PPIU licensing timeline against company-approved documents before publishing.
 - Verify the WhatsApp number in `src/App.jsx` and change `WA_NUMBER` if needed.
-- Replace remote Unsplash images with approved company-owned/licensed assets.
+- Replace remaining remote Unsplash images with approved company-owned/licensed assets.
 - Add separate routes and backend integrations if needed. This prototype is primarily a homepage design, not a booking/payment system.
 
 The prototype uses external image URLs and Google Fonts, so those assets require an internet connection.

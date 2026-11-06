@@ -1,7 +1,52 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones, MapPin, Menu, Plane, ShieldCheck, Star, Users, X, CalendarDays, BookOpen, Building2, CircleHelp, Globe2, HeartHandshake, Hotel, Luggage, MessageCircle, PlaneTakeoff, Wallet, MapPinned, BadgeCheck, ChevronRight, FileText, Landmark, CircleCheck, Info, Plus, Minus } from 'lucide-react';
-import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+
+const moments = [
+  {
+    className: 'destination-large',
+    image: '/assets/destination/jamaah-madinah.webp',
+    alt: 'Jamaah Safar Wisata Madina berjalan menuju Masjid Nabawi',
+    number: '01',
+    title: 'Jamaah',
+    description: 'Bersama menuju Baitullah'
+  },
+  {
+    className: 'destination-small',
+    image: '/assets/destination/pendampingan-pembimbing.webp',
+    alt: 'Pembimbing Safar Wisata Madina mendampingi jamaah',
+    number: '02',
+    title: 'Pendampingan',
+    description: 'Menemani setiap langkah'
+  },
+  {
+    className: 'destination-small destination-ibadah',
+    image: '/assets/destination/kegiatan-ibadah.webp',
+    alt: 'Jamaah berdoa bersama dalam kegiatan ibadah',
+    number: '03',
+    title: 'Momen ibadah',
+    description: 'Perjalanan yang penuh makna'
+  }
+];
 
 export default function DestinationMosaic() {
-  return <section className="destination-section" id="destinasi"><div className="destination-backdrop"><img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=2000&q=85" alt="Masjidil Haram" loading="lazy"/></div><div className="container destination-inner"><div className="destination-heading"><div className="eyebrow light"><span/> TEMPAT YANG MENANTI</div><h2>Lebih dari sekadar<br/><em>perjalanan.</em></h2><p>Bangun pengalaman visual yang menghubungkan calon jamaah dengan suasana, tempat, dan makna perjalanan yang sedang direncanakan.</p><a className="button button-gold" href="#paket">Lihat pilihan perjalanan <ArrowRight size={16}/></a></div><div className="destination-collage"><figure className="destination-large"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=900&q=85" alt="Arsitektur Masjidil Haram" loading="lazy"/><figcaption><span>01</span><strong>Makkah</strong><small>Tempat menata niat</small></figcaption></figure><figure className="destination-small"><img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=700&q=85" alt="Masjid Nabawi" loading="lazy"/><figcaption><span>02</span><strong>Madinah</strong></figcaption></figure><figure className="destination-small destination-turkey"><img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=700&q=85" alt="Arsitektur Istanbul" loading="lazy"/><figcaption><span>03</span><strong>Wisata halal</strong></figcaption></figure></div></div></section>;
+  return <section className="destination-section" id="destinasi">
+    <div className="container destination-inner">
+      <div className="destination-heading">
+        <div className="eyebrow light"><span /> PERJALANAN BERSAMA SAFAR</div>
+        <h2>Setiap Langkah Menuju <em>Baitullah, Ada Kami yang Mendampingi.</em></h2>
+        <p>Dari persiapan hingga kegiatan ibadah di Tanah Suci, tim Safar Wisata Madina hadir mendampingi jamaah. Kenali perjalanan dan nilai pelayanan kami lebih dekat.</p>
+        <a className="button button-gold" href="#tentang">Kenali Safar Wisata Madina <ArrowRight size={16} /></a>
+      </div>
+      <div className="destination-collage">
+        {moments.map(({ className, image, alt, number, title, description }) => <figure className={className} key={number}>
+          <img src={image} alt={alt} loading="lazy" decoding="async" />
+          <figcaption>
+            <span>{number}</span>
+            <strong>{title}</strong>
+            <small>{description}</small>
+          </figcaption>
+        </figure>)}
+      </div>
+    </div>
+  </section>;
 }

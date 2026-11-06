@@ -9,9 +9,9 @@ import Services from './components/sections/Services.jsx';
 import Packages from './components/sections/Packages.jsx';
 import DestinationMosaic from './components/sections/DestinationMosaic.jsx';
 import About from './components/sections/About.jsx';
+import GuideGallery from './components/sections/GuideGallery.jsx';
 import Benefits from './components/sections/Benefits.jsx';
 import PackageGuide from './components/sections/PackageGuide.jsx';
-import InformationTiles from './components/sections/InformationTiles.jsx';
 import VisualItinerary from './components/sections/VisualItinerary.jsx';
 import Facilities from './components/sections/Facilities.jsx';
 import Preparation from './components/sections/Preparation.jsx';
@@ -21,5 +21,5 @@ import FAQ from './components/sections/FAQ.jsx';
 import ContactBanner from './components/sections/ContactBanner.jsx';
 
 export default function App() {
-  return <><Navbar/><main><Hero/><TrustStrip/><Services/><Packages/><DestinationMosaic/><About/><Benefits/><PackageGuide/><InformationTiles/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/></main><Footer/><a className="floating-wa" href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noreferrer" aria-label="Chat WhatsApp"><Headset size={21}/><span>Butuh bantuan?</span></a></>;
+  return <><Navbar/><main><Hero/><TrustStrip/><Services/><Packages/><Benefits/><DestinationMosaic/><About/><GuideGallery/><PackageGuide/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/></main><Footer/><a className="floating-wa" href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noreferrer" aria-label="Chat WhatsApp"><Headset size={21}/><span>Butuh bantuan?</span></a></>;
 }

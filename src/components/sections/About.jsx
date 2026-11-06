@@ -1,10 +1,31 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones, MapPin, Menu, Plane, ShieldCheck, Star, Users, X, CalendarDays, BookOpen, Building2, CircleHelp, Globe2, HeartHandshake, Hotel, Luggage, MessageCircle, PlaneTakeoff, Wallet, MapPinned, BadgeCheck, ChevronRight, FileText, Landmark, CircleCheck, Info, Plus, Minus } from 'lucide-react';
-import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
+import React from 'react';
+import { UsersRound } from 'lucide-react';
+import { SectionHeading } from '../ui/common.jsx';
 
 export default function About() {
-  return <section className="section about-section" id="tentang"><div className="container about-grid">
-    <div className="about-visual"><img className="about-main-image" src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=85" alt="Arsitektur Masjidil Haram" loading="lazy"/><div className="about-stamp"><span>ALFAJR</span><strong>Perjalanan<br />penuh makna</strong><small>UMROH & HAJI</small></div><div className="about-caption"><span className="caption-dot"/><span>MENEMANI NIAT BAIK ANDA</span></div></div>
-    <div className="about-copy"><SectionHeading eyebrow="TENTANG ALFAJR" title={<>Berangkat dengan persiapan,<br /><em>pulang membawa cerita.</em></>} text="PT Alfajr Travelindo Indonesia menyediakan layanan perjalanan umrah, haji, dan wisata dengan perhatian pada kebutuhan jamaah."/><p>Setiap perjalanan membutuhkan informasi yang jelas dan pendampingan yang tepat. Kami ingin membantu jamaah memahami pilihan paket, persiapan keberangkatan, serta layanan yang tersedia sebelum menentukan perjalanan.</p><div className="about-checks"><span><Check size={16} /> Informasi paket yang jelas</span><span><Check size={16} /> Pendampingan perjalanan</span><span><Check size={16} /> Pilihan sesuai kebutuhan</span></div><a className="button button-outline" href="https://alfajrumroh.com/" target="_blank" rel="noreferrer">Pelajari lebih lanjut <ArrowRight size={17} /></a><div className="about-footnote"><strong>Sejak 2017</strong><span>Berpengalaman melayani perjalanan jamaah</span></div></div>
-  </div></section>;
+  return <section className="about-section about-profile-section" id="tentang">
+    <div className="container about-profile">
+      <div className="about-profile-intro">
+        <div className="about-profile-visual">
+          <img
+            src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=85"
+            alt="Suasana Masjidil Haram sebagai tujuan perjalanan ibadah umrah"
+            loading="lazy"
+          />
+          <span className="about-profile-image-label">JALAN PINTAS MENUJU BAITULLAH</span>
+        </div>
+        <div className="about-profile-copy">
+          <SectionHeading
+            eyebrow="TENTANG SAFAR WISATA MADINA"
+            title={<>Perjalanan Ibadah yang<br /><em>Berawal dari Niat Dakwah.</em></>}
+          />
+          <p>Berlokasi di Pesawaran, Lampung, Safar Wisata Madina hadir sebagai wasilah masyarakat menuju Baitullah melalui pelayanan yang mudah, pendampingan, dan nilai dakwah.</p>
+          <div className="about-profile-founder">
+            <span className="about-profile-founder-mark" aria-hidden="true"><UsersRound size={18} /></span>
+            <span><strong>Dr. (HC) Ikhwanul Mujahidin, Lc., M.Pd.</strong><small>Pendiri · Berpengalaman lebih dari 10 tahun sebagai muthawif</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>;
 }
