@@ -149,7 +149,7 @@ const galleryItems = [
   }
 ];
 
-function GalleryModal({ item, onClose, onVideoPlay }) {
+function GalleryModal({ item, onClose }) {
   const modalRef = useRef(null);
   const closeRef = useRef(null);
 
@@ -190,7 +190,7 @@ function GalleryModal({ item, onClose, onVideoPlay }) {
       <button ref={closeRef} type="button" className="gallery-modal-close" onClick={onClose} aria-label="Tutup media"><X size={22} /></button>
       <div className="gallery-modal-media">
         {item.type === 'video'
-          ? <video src={item.src} controls playsInline preload="metadata" poster={item.poster} onPlay={onVideoPlay} />
+          ? <video src={item.src} controls playsInline preload="metadata" poster={item.poster} />
           : <img src={item.src} alt={item.alt} />}
       </div>
       <div className="gallery-modal-caption">
@@ -202,7 +202,7 @@ function GalleryModal({ item, onClose, onVideoPlay }) {
   </div>, document.body);
 }
 
-export default function GalleryPage({ onVideoPlay }) {
+export default function GalleryPage() {
   const [filter, setFilter] = useState('Semua');
   const [selectedItem, setSelectedItem] = useState(null);
   const filters = ['Semua', 'Foto', 'Video'];
@@ -260,6 +260,6 @@ export default function GalleryPage({ onVideoPlay }) {
         </div>
       </div>
     </section>
-    {selectedItem && <GalleryModal item={selectedItem} onClose={closeModal} onVideoPlay={onVideoPlay} />}
+    {selectedItem && <GalleryModal item={selectedItem} onClose={closeModal} />}
   </main>;
 }

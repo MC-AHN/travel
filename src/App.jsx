@@ -110,17 +110,9 @@ export default function App() {
     void startBackgroundMusic();
   };
 
-  const muteBackgroundMusic = () => {
-    if (!audioRef.current) return;
-    audioRef.current.muted = true;
-    setMusicMuted(true);
-  };
-
   useEffect(() => {
     const syncPageWithLocation = () => {
-      const isGallery = isGalleryPage();
-      setGalleryPage(isGallery);
-      if (isGallery) muteBackgroundMusic();
+      setGalleryPage(isGalleryPage());
     };
 
     window.addEventListener('hashchange', syncPageWithLocation);
@@ -152,14 +144,10 @@ export default function App() {
     requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView());
   }, [galleryPage]);
 
-  const handleGalleryVideoPlay = () => {
-    muteBackgroundMusic();
-  };
-
   return <>
     <Navbar />
     {galleryPage
-      ? <GalleryPage onVideoPlay={handleGalleryVideoPlay} />
+      ? <GalleryPage />
       : <main><Hero/><TrustStrip/><Services/><Packages/><Benefits/><DestinationMosaic/><About/><GuideGallery/><PackageGuide/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/></main>}
     <Footer />
     {welcomePosterOpen && <div className="welcome-poster-backdrop" role="presentation">
