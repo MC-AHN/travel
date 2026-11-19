@@ -162,7 +162,6 @@ export default function App() {
       aria-label={musicError ? 'Coba putar musik lagi' : musicPlaying ? musicMuted ? 'Nyalakan suara musik' : 'Mute musik latar' : musicAutoplayBlocked ? 'Aktifkan musik latar' : 'Putar musik latar'}
     >
       {musicPlaying && !musicMuted ? <Volume2 size={19} /> : <VolumeX size={19} />}
-      <span>{musicError ? 'Coba putar lagi' : musicPlaying ? musicMuted ? 'Nyalakan suara' : 'Mute musik' : musicAutoplayBlocked ? 'Aktifkan musik' : 'Putar musik'}</span>
     </button>
     <a className="floating-wa" href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noreferrer" aria-label="Chat WhatsApp"><Headset size={21}/><span>Butuh bantuan?</span></a>
   </>;
