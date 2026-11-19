@@ -3,7 +3,7 @@ import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones,
 
 const heroVideos = [
   ['hero-pembimbing', 'gallery-hero-pembimbing'],
-  ['hero-alus', 'hero-alus-poster'],
+  ['whatsapp-2026-10-27-102806-pembimbing-migdad', 'gallery-whatsapp-2026-10-27-102806-pembimbing-migdad'],
   ['hero-ibadah', 'hero-ibadah-poster'],
   ['hero-madinah', 'hero-madinah-poster']
 ];
