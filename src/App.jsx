@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Headset, Volume2, VolumeX } from 'lucide-react';
-import { getGalleryHref, isGalleryPage, WA_NUMBER } from './components/ui/common.jsx';
+import { getSiteBasePath, isGalleryPage, WA_NUMBER } from './components/ui/common.jsx';
 import Navbar from './components/layout/Navbar.jsx';
 import Footer from './components/layout/Footer.jsx';
 import GalleryPage from './components/pages/GalleryPage.jsx';
@@ -43,6 +43,7 @@ export default function App() {
   const [musicMuted, setMusicMuted] = useState(false);
   const [musicError, setMusicError] = useState(false);
   const [musicAutoplayBlocked, setMusicAutoplayBlocked] = useState(false);
+  const [galleryPage, setGalleryPage] = useState(isGalleryPage);
   const [welcomePosterOpen, setWelcomePosterOpen] = useState(shouldShowWelcomePoster);
   const audioRef = useRef(null);
   const posterCloseRef = useRef(null);
@@ -109,21 +110,56 @@ export default function App() {
     void startBackgroundMusic();
   };
 
-  const galleryPage = isGalleryPage();
-  const pauseBackgroundMusic = () => {
-    if (audioRef.current && !audioRef.current.paused) audioRef.current.pause();
+  const muteBackgroundMusic = () => {
+    if (!audioRef.current) return;
+    audioRef.current.muted = true;
+    setMusicMuted(true);
   };
 
   useEffect(() => {
-    if (new URLSearchParams(window.location.search).get('page') === 'galeri') {
-      window.history.replaceState(null, '', getGalleryHref());
+    const syncPageWithLocation = () => {
+      const isGallery = isGalleryPage();
+      setGalleryPage(isGallery);
+      if (isGallery) muteBackgroundMusic();
+    };
+
+    window.addEventListener('hashchange', syncPageWithLocation);
+    window.addEventListener('popstate', syncPageWithLocation);
+
+    if (isGalleryPage() && (window.location.pathname.endsWith('/galeri') || window.location.search)) {
+      window.history.replaceState(null, '', `${getSiteBasePath()}#galeri`);
+      syncPageWithLocation();
     }
+
+    return () => {
+      window.removeEventListener('hashchange', syncPageWithLocation);
+      window.removeEventListener('popstate', syncPageWithLocation);
+    };
   }, []);
+
+  useEffect(() => {
+    if (galleryPage) {
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    if (!targetId || targetId === 'galeri') {
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView());
+  }, [galleryPage]);
+
+  const handleGalleryVideoPlay = () => {
+    muteBackgroundMusic();
+  };
 
   return <>
     <Navbar />
     {galleryPage
-      ? <GalleryPage onVideoPlay={pauseBackgroundMusic} />
+      ? <GalleryPage onVideoPlay={handleGalleryVideoPlay} />
       : <main><Hero/><TrustStrip/><Services/><Packages/><Benefits/><DestinationMosaic/><About/><GuideGallery/><PackageGuide/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/></main>}
     <Footer />
     {welcomePosterOpen && <div className="welcome-poster-backdrop" role="presentation">

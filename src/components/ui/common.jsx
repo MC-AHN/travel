@@ -5,6 +5,7 @@ export const WA_NUMBER = '6282375101979';
 
 export function isGalleryPage() {
   return /\/galeri\/?$/.test(window.location.pathname)
+    || window.location.hash === '#galeri'
     || new URLSearchParams(window.location.search).get('page') === 'galeri';
 }
 
@@ -18,11 +19,11 @@ export function getSiteBasePath() {
 }
 
 export function getGalleryHref() {
-  return `${getSiteBasePath()}galeri`;
+  return '#galeri';
 }
 
 export function getSectionHref(section) {
-  return `${isGalleryPage() ? getSiteBasePath() : ''}#${section}`;
+  return `#${section}`;
 }
 
 export function WhatsAppLink({ children = 'Konsultasi via WhatsApp', className = 'button button-primary', showArrow = true, message = 'Assalamu’alaikum, saya ingin bertanya tentang paket perjalanan Safar Wisata Madina.' }) {
