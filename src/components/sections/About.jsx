@@ -6,13 +6,13 @@ export default function About() {
   return <section className="about-section about-profile-section" id="tentang">
     <div className="container about-profile">
       <div className="about-profile-intro">
-        <div className="about-profile-visual">
+        <div className="about-profile-visual about-profile-visual-poster">
           <img
-            src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1200&q=85"
-            alt="Suasana Masjidil Haram sebagai tujuan perjalanan ibadah umrah"
+            src="/assets/about/akreditasi-safar-wisata-madina-2026-square.jpeg"
+            alt="Poster akreditasi A PT Safar Wisata Madina tahun 2026"
             loading="lazy"
+            decoding="async"
           />
-          <span className="about-profile-image-label">JALAN PINTAS MENUJU BAITULLAH</span>
         </div>
         <div className="about-profile-copy">
           <SectionHeading

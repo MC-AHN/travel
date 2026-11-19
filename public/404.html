@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memuat Galeri | Safar Wisata Madina</title>
+    <script>
+      const path = window.location.pathname.replace(/\/+$/, '');
+      const galleryMatch = path.match(/^(.*\/)galeri$/);
+
+      if (galleryMatch) {
+        const basePath = galleryMatch[1] || '/';
+        window.location.replace(`${basePath}?page=galeri`);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Halaman tidak ditemukan.</p>
+  </body>
+</html>

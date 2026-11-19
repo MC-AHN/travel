@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowRight, Check, ChevronDown, Clock3, Compass, Headphones, MapPin, Menu, Plane, ShieldCheck, Star, Users, X, CalendarDays, BookOpen, Building2, CircleHelp, Globe2, HeartHandshake, Hotel, Luggage, MessageCircle, PlaneTakeoff, Wallet, MapPinned, BadgeCheck, ChevronRight, FileText, Landmark, CircleCheck, Info, Plus, Minus } from 'lucide-react';
 
 const heroVideos = [
-  ['hero-pembimbing', 'hero-pembimbing-poster'],
-  ['hero-jamaah', 'hero-jamaah-poster'],
+  ['hero-pembimbing', 'gallery-hero-pembimbing'],
+  ['hero-alus', 'hero-alus-poster'],
   ['hero-ibadah', 'hero-ibadah-poster'],
   ['hero-madinah', 'hero-madinah-poster']
 ];
