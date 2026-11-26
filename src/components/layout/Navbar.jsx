@@ -5,7 +5,7 @@ import { getGalleryHref, getSectionHref } from '../ui/common.jsx';
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [showSticky, setShowSticky] = useState(false);
-  const links = [['Beranda', getSectionHref('beranda')], ['Layanan', getSectionHref('layanan')], ['Paket', getSectionHref('paket')], ['Panduan', getSectionHref('panduan')], ['Tentang', getSectionHref('tentang')], ['Galeri', getGalleryHref()], ['Artikel', getSectionHref('artikel')]];
+  const links = [['Beranda', getSectionHref('beranda')], ['Layanan', getSectionHref('layanan')], ['Paket', getSectionHref('paket')], ['Daftar', getSectionHref('daftar')], ['Panduan', getSectionHref('panduan')], ['Tentang', getSectionHref('tentang')], ['Galeri', getGalleryHref()], ['Artikel', getSectionHref('artikel')]];
   useEffect(() => {
     const update = () => setShowSticky(window.scrollY > 90);
     update();

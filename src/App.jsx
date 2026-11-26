@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Headset, Volume2, VolumeX } from 'lucide-react';
-import { getSiteBasePath, isGalleryPage, WA_NUMBER } from './components/ui/common.jsx';
+import { getSiteBasePath, isGalleryPage, isRegistrationPage, WA_NUMBER } from './components/ui/common.jsx';
 import Navbar from './components/layout/Navbar.jsx';
 import Footer from './components/layout/Footer.jsx';
 import GalleryPage from './components/pages/GalleryPage.jsx';
@@ -8,6 +8,7 @@ import Hero from './components/sections/Hero.jsx';
 import TrustStrip from './components/sections/TrustStrip.jsx';
 import Services from './components/sections/Services.jsx';
 import Packages from './components/sections/Packages.jsx';
+import RegistrationForm from './components/sections/RegistrationForm.jsx';
 import DestinationMosaic from './components/sections/DestinationMosaic.jsx';
 import About from './components/sections/About.jsx';
 import GuideGallery from './components/sections/GuideGallery.jsx';
@@ -44,6 +45,7 @@ export default function App() {
   const [musicError, setMusicError] = useState(false);
   const [musicAutoplayBlocked, setMusicAutoplayBlocked] = useState(false);
   const [galleryPage, setGalleryPage] = useState(isGalleryPage);
+  const [registrationPage, setRegistrationPage] = useState(isRegistrationPage);
   const [welcomePosterOpen, setWelcomePosterOpen] = useState(shouldShowWelcomePoster);
   const audioRef = useRef(null);
   const posterCloseRef = useRef(null);
@@ -113,6 +115,7 @@ export default function App() {
   useEffect(() => {
     const syncPageWithLocation = () => {
       setGalleryPage(isGalleryPage());
+      setRegistrationPage(isRegistrationPage());
     };
 
     window.addEventListener('hashchange', syncPageWithLocation);
@@ -130,7 +133,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (galleryPage) {
+    if (galleryPage || registrationPage) {
       window.scrollTo(0, 0);
       return;
     }
@@ -142,13 +145,15 @@ export default function App() {
     }
 
     requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView());
-  }, [galleryPage]);
+  }, [galleryPage, registrationPage]);
 
   return <>
     <Navbar />
     {galleryPage
       ? <GalleryPage />
-      : <main><Hero/><TrustStrip/><Services/><Packages/><Benefits/><DestinationMosaic/><About/><GuideGallery/><PackageGuide/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/></main>}
+      : registrationPage
+        ? <main><RegistrationForm /></main>
+        : <main><Hero/><TrustStrip/><Services/><Packages/><Benefits/><DestinationMosaic/><About/><GuideGallery/><PackageGuide/><VisualItinerary/><Facilities/><Preparation/><Testimonials/><Articles/><FAQ/><ContactBanner/></main>}
     <Footer />
     {welcomePosterOpen && <div className="welcome-poster-backdrop" role="presentation">
       <section className="welcome-poster-dialog" role="dialog" aria-modal="true" aria-labelledby="welcome-poster-hint">

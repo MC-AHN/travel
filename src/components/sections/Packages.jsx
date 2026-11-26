@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { X } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 import { SectionHeading, WhatsAppLink } from '../ui/common.jsx';
 import { packages } from '../../data.js';
 
@@ -210,6 +210,13 @@ export default function Packages() {
     </div>
     <div className="package-arrows package-arrows-bottom"><button type="button" onClick={() => movePackages(-1)} aria-label="Paket sebelumnya">‹</button><button type="button" onClick={() => movePackages(1)} aria-label="Paket berikutnya">›</button></div>
     <div className="package-carousel-hint"><span>GESER UNTUK MELIHAT PAKET LAINNYA</span><span className="package-carousel-line" /></div>
+    <div className="package-registration-cta">
+      <div>
+        <strong>Tertarik mendaftar paket umrah?</strong>
+        <span>Isi formulir pendaftaran secara bertahap.</span>
+      </div>
+      <a className="button button-primary" href="#daftar">Mulai pendaftaran <ArrowRight size={17} /></a>
+    </div>
     {selectedPackage && <PackageInfoModal item={selectedPackage} onClose={() => setSelectedPackage(null)} />}
     <p className="disclaimer">Informasi paket dan hotel dirangkum dari materi yang tersedia. Konfirmasikan jadwal, harga beserta mata uang dan satuannya, fasilitas, serta ketersediaan kepada tim Safar Wisata Madina sebelum mendaftar.</p>
   </div></section>;

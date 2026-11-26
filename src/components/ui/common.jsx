@@ -9,6 +9,11 @@ export function isGalleryPage() {
     || new URLSearchParams(window.location.search).get('page') === 'galeri';
 }
 
+export function isRegistrationPage() {
+  return window.location.hash === '#daftar'
+    || /\/daftar\/?$/.test(window.location.pathname);
+}
+
 export function getSiteBasePath() {
   const pathname = window.location.pathname;
   const galleryPath = pathname.match(/^(.*\/)galeri\/?$/);
