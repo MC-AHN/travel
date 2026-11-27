@@ -29,7 +29,7 @@ mysql -h 127.0.0.1 -u safar_app -p safar_registration < server/migrations/001_cr
 mysql -h 127.0.0.1 -u safar_app -p safar_registration < server/migrations/002_create_registration_payments.sql
 ```
 
-Start the API and frontend in separate terminals:
+For frontend hot reload during development, start the API and frontend in separate terminals:
 
 ```bash
 npm run dev:api
@@ -38,14 +38,13 @@ npm run dev
 
 Vite proxies `/api` requests to the local API server. The API supports saving and restoring a registration draft with a 24-hour, HttpOnly cookie, creating DOKU Checkout sessions, and applying signed successful-payment notifications idempotently. Enable persistence in a local `.env` with `VITE_REGISTRATION_API_ENABLED=true` to test the form.
 
-For the planned all-in-one Node.js host, build the frontend and start the API server:
+To test the complete site locally on a single server, set `VITE_REGISTRATION_API_ENABLED=true` in `.env`, then run:
 
 ```bash
-npm run build
 npm start
 ```
 
-In production, the Node.js server serves both `dist/` and `/api` from the same origin. Set `NODE_ENV=production` for the running server and `VITE_REGISTRATION_API_ENABLED=true` in the build environment before running `npm run build`.
+`npm start` automatically builds the frontend, sets production mode, and starts one Node.js server that serves both `dist/` and `/api` from the same origin. Open the URL printed by the server (by default `http://localhost:3001/`). On the Node.js host, configure the same production environment and use `server/index.js` as the startup file.
 
 Set DOKU credentials only in the server environment. `DOKU_MODE` defaults to `sandbox`; leave `PUBLIC_APP_URL` empty during local draft/database work. DOKU payments stay disabled until it is set to the public HTTPS site origin. An invalid or missing URL does not prevent the local draft API from starting. DOKU checkout is restricted to bank Virtual Accounts only; cards, e-wallets, QRIS, and minimarket channels are excluded. The default list contains the documented bank VA methods. If DOKU has activated only some channels for the merchant account, set `DOKU_PAYMENT_METHOD_TYPES` to a comma-separated subset of those bank VA codes. Configure the DOKU Back Office notification URL as `https://<your-domain>/api/webhooks/doku` after the API is publicly deployed. Full payment can be enabled before the DP rule is decided; DP checkout remains unavailable until both `PAYMENT_DP_POLICY` (`percentage` or `fixed_per_traveler`) and `PAYMENT_DP_VALUE` are set. No payment setup is enabled by the example environment.
 
